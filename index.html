@@ -11,6 +11,8 @@
             --background-light: #ecf0f1;
             --text-color: #333;
         }
+		
+		
 
         * {
             margin: 0;
@@ -63,6 +65,14 @@
         .navbar .nav-links a:hover {
             color: var(--secondary-color);
         }
+		
+		.nav-links a.active {
+			color: var(--secondary-color);
+			font-weight: bold;
+			text-decoration: underline;
+		}
+
+		
 
         /* Sections */
         .section {
@@ -212,7 +222,7 @@
     <section id="home" class="section">
         <div class="section-content">
 		<!-- Image Added Here -->
-            <img src="logo.jpg" alt="ClearPath Solutions" style="width: 250px; height: 250px;"/>
+            <img src="file:///C:/Users/SUJATA%20SINHA/Desktop/logo.jpg" alt="ClearPath Solutions" style="width: 250px; height: 250px;"/>
             <h1>ClearPath Solutions</h1>
             <p>
                 We are an innovative technology solutions company dedicated to solving complex 
@@ -275,7 +285,7 @@
                 </div>
 				
                 <div class="project-card">
-                    <h3>Enterprise Work Management</h3>
+                    <h3>Enterprise Work management</h3>
 					<div id="iotShow">
                     <p style="margin-bottom: 20px;">
 
@@ -350,6 +360,10 @@
 
       if (response.ok) {
         alert('Email sent successfully!');
+		document.getElementById('name').value="";
+		document.getElementById('email').value="";
+		document.getElementById('message').value="";
+		
       } else {
         const errorData = await response.json();
         console.error('Error:', errorData);
@@ -363,6 +377,30 @@
 
   document.getElementById('contactForm').addEventListener('submit', sendEmail);
 </script>
+
+<script>
+  window.addEventListener('scroll', () => {
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-links a');
+
+    let currentSection = '';
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 100; // Adjust offset for navbar height
+      const sectionBottom = sectionTop + section.offsetHeight;
+      if (window.scrollY >= sectionTop && window.scrollY < sectionBottom) {
+        currentSection = section.getAttribute('id');
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === `#${currentSection}`) {
+        link.classList.add('active');
+      }
+    });
+  });
+</script>
+
 	
 <script>
 	
