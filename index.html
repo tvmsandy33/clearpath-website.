@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClearPath Solutions - Innovative Tech Solutions</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --background-light: #ecf0f1;
+            --text-color: #333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+
+        /* Navigation */
+        .navbar {
+            background-color: var(--primary-color);
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+
+        .navbar .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .navbar .nav-links li {
+            margin-left: 20px;
+        }
+
+        .navbar .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .navbar .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Sections */
+        .section {
+            padding: 80px 5%;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .section-content {
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        /* Home Section */
+        #home {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+
+        #home h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        #home p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Image Styling */
+        #home img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+
+        /* Projects Section */
+        #projects {
+            background-color: var(--background-light);
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+			margin-top: 20px;
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+		
+		.collapsed {
+            overflow: hidden;
+            max-height: 120px; /* Adjust height as needed */
+            position: relative;
+        }
+
+        .toggle-link {
+            color: var(--secondary-color);
+            cursor: pointer;
+            display: block;
+            margin-top: 10px;
+            text-decoration: underline;
+        }
+
+        /* Contact Section */
+        #contact {
+            background-color: white;
+        }
+
+        .contact-form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .contact-form button {
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            background-color: var(--primary-color);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                padding: 1rem;
+            }
+
+            .navbar .nav-links {
+                margin-top: 20px;
+            }
+
+            .navbar .nav-links li {
+                margin: 0 10px;
+            }
+
+            #home h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="#" class="logo">ClearPath Solutions</a>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="section">
+        <div class="section-content">
+		<!-- Image Added Here -->
+            <img src="file:///C:/Users/SUJATA%20SINHA/Desktop/logo.jpg" alt="ClearPath Solutions" style="width: 250px; height: 250px;"/>
+            <h1>ClearPath Solutions</h1>
+            <p>
+                We are an innovative technology solutions company dedicated to solving complex 
+                challenges through cutting-edge software and strategic thinking. Our team 
+                transforms ideas into impactful digital solutions.
+            </p>
+            
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="section-content">
+            <h2>Our Projects</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>Investment Driver Application</h3>
+					<div id="investmentShow">
+                    <p style="margin-bottom: 20px;">
+						
+                        The application enables administrators to manage investment pricing dynamically, with a focus on region-specific pricing. 
+						
+					</P>
+                    </div>					
+						
+					<div id="investmentLess" style="display:none">
+					<P style="margin-bottom: 20px;">
+						
+						Admins can set and update price tiers for each investment based on factors like local market conditions, taxes, or currencies, using a centralized control panel.
+						The system detects a user's region through their account or IP address and displays the appropriate pricing.
+					</p>
+					<p>
+						It supports complex scenarios, including tax rates, special offers, and discounts tailored to regions. Admins can track historical pricing changes and implement
+						personalized pricing strategies. Users are notified of pricing updates, ensuring transparency and consistency. This flexible, region-based pricing system enhances
+						user experience and enables fair, localized investment pricing for both users and administrators.					
+						
+                    </p>
+					</div>
+					<p><a href="#projects" onclick="toggleContentInvestment(event,this); return false;">Show more</a></p>
+
+                </div>
+                <div class="project-card">
+                    <h3>Centralized File System</h3>
+					<div id="centralizedShow">
+                    <p style="margin-bottom: 20px;">
+                        The Centralized File System, developed for a Telecom client, automates document organization within a hierarchical folder structure.
+                    </p>
+					</div>
+					<div id="centralizedLess" style="display:none">					
+					<p style="margin-bottom: 20px;">
+					Users can define parent and child folders via a user-friendly interface, with the system validating the structure against business rules to prevent errors like duplicate names.
+					</p>
+					<p>
+					Appian integration dynamically creates the folder structure in Google Drive, while robust error-handling ensures reliability by addressing issues such as insufficient permissions.
+					Automated email notifications keep users informed when folders and documentation are ready. Role-based access controls protect sensitive information, allowing only authorized 
+					users to manage specific folders, ensuring secure and efficient document management.
+					</P>
+					</div>
+					<p><a href="#projects" onclick="toggleContentCentralized(event,this); return false;">Show more</a></p>
+                </div>
+				
+                <div class="project-card">
+                    <h3>IoT Integration Framework</h3>
+					<div id="iotShow">
+                    <p style="margin-bottom: 20px;">
+
+						The application helps users track work progress and manage tasks efficiently, aligning with Service Level Agreements (SLAs) and deadlines. 
+					</p>
+					</div>
+					<div id="iotless" style="display:none">
+					<p style="margin-bottom: 20px;">
+
+						It features a comprehensive dashboard where users can view and manage assigned requests. Team leaders oversee main requests, grouping related sub-requests for
+						better workflow organization.
+					</p>
+					<p>
+
+						Key features include automated reminders that notify users of approaching deadlines, minimizing overlooked tasks and enabling better planning. A progress tracker
+						displays task completion percentages, allowing users to prioritize effectively and meet SLA deadlines. The application integrates with external systems, enabling
+						seamless request submissions, streamlining workflows, and reducing manual effort, enhancing productivity and operational efficiency.
+                    </p>
+					</div>
+					<p><a href="#projects" onclick="toggleContentIot(event,this); return false;">Show more</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+	
+	
+
+	
+<!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="section-content">
+            <h2>Contact Us</h2>
+            <form class="contact-form" id="contactForm">
+				<input type="text" id="name" name="name" placeholder="Your Name" required />
+			    <input type="email" id="email" name="email" placeholder="Your Email" required />
+			    <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+			    <button type="submit">Send Email</button>
+			 
+			</form>
+
+        </div>
+    </section>
+	
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+<script>
+  async function sendEmail(event) {
+    event.preventDefault(); // Prevent form submission
+
+    const form = document.getElementById('contactForm');
+    const formData = new FormData(form);
+
+    const data = {
+      service_id: 'service_sxlpgof', // Replace with your service ID
+      template_id: 'template_yoy52em', // Replace with your template ID
+      user_id: 'v0yq35C-_0w62k53m', // Replace with your EmailJS user ID
+      template_params: {
+        name: formData.get('name'),
+        email: formData.get('email'),
+        message: formData.get('message'),
+      },
+    };
+
+    try {
+      const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        alert('Email sent successfully!');
+      } else {
+        const errorData = await response.json();
+        console.error('Error:', errorData);
+        alert('Failed to send email. Please try again.');
+      }
+    } catch (error) {
+      console.error('Network Error:', error);
+      alert('Failed to send email. Please check your network connection.');
+    }
+  }
+
+  document.getElementById('contactForm').addEventListener('submit', sendEmail);
+</script>
+	
+<script>
+	
+function toggleContentInvestment(event,link) {
+  //var investmentShow = document.getElementById("investmentShow");
+  var investmentLess = document.getElementById("investmentLess");
+  if (link.innerText == 'Show more') {
+    investmentLess.style.display = "inline"; // Show content
+	link.innerText = 'Show less';	
+  }
+  else{
+  investmentLess.style.display = "none";
+  link.innerText = 'Show more';
+  e.preventDefault();
+  }  
+}
+
+function toggleContentCentralized(event,link) {
+  //var content = document.getElementById("investmentShow");
+  var centralizedLess = document.getElementById("centralizedLess");
+  if (link.innerText == 'Show more') {
+    centralizedLess.style.display = "inline"; // Show content
+	link.innerText = 'Show less';	
+  }
+  else{
+  centralizedLess.style.display = "none";
+  link.innerText = 'Show more';
+  e.preventDefault();
+  }  
+}
+
+function toggleContentIot(event,link) {
+  //var content = document.getElementById("investmentShow");
+  var iotLess = document.getElementById("iotless");
+  if (link.innerText == 'Show more') {
+    iotLess.style.display = "inline"; // Show content
+	link.innerText = 'Show less';	
+  }
+  else{
+  iotLess.style.display = "none";
+  link.innerText = 'Show more';
+  e.preventDefault();
+  }  
+}
+
+</script>
+	
+</body>
+</html>
